@@ -13,20 +13,9 @@ col_SB_1 = int(input("Укажите количество учащихся в п
 col_SB_2 = int(input("Укажите количество учащихся во втором классе: "))
 col_SB_3 = int(input("Укажите количество учащихся в третьем классе: "))
 
-col_table_1 = col_SB_1 // 2
-
-if col_SB_1 % 2 != 0:
-    col_table_1 += 1
-
-col_table_2 = col_SB_2 // 2
-
-if col_SB_2 % 2 != 0:
-    col_table_2 += 1
-
-col_table_3 = col_SB_3 // 2
-
-if col_SB_3 % 2 != 0:
-    col_table_3 += 1
+col_table_1 = col_SB_1 // 2 + col_SB_1 % 2
+col_table_2 = col_SB_2 // 2 + col_SB_2 % 2
+col_table_3 = col_SB_3 // 2 + col_SB_3 % 2
 
 sum_table = col_table_1 + col_table_2 + col_table_3
 
