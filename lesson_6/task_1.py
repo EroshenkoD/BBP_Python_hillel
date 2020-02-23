@@ -6,18 +6,21 @@
 
 h = int(input('Введите высоту фигуры: '))
 
+s_1 = '*  '
+s_2 = '   '
+
 # Выводит полый треугольник
 for i in range(h):
     if i == h - 1:
-        print(' ', end='')
+        print(s_2, end='')
         for j in range((h * 2) - 1):
-            print('*', end='')
+            print(s_1, end='')
     else:
         for j in range(h * 2):
             if h - i == j or j == h + i:
-                print('*', end='')
+                print(s_1, end='')
             else:
-                print(' ', end='')
+                print(s_2, end='')
         print()
 
 print('\n')
@@ -26,28 +29,38 @@ print('\n')
 for i in range(h):
     for j in range((h * 2)):
         if h - i <= j <= h + i:
-            print('*', end='')
+            print(s_1, end='')
         else:
-            print(' ', end='')
+            print(s_2, end='')
     print()
 
 print('\n')
+
+old_h = h
+h = h // 2 + h % 2
 
 # Выводит ромб
 for i in range(h):
     for j in range((h * 2)):
         if h - i <= j <= h + i:
-            print('*', end='')
+            print(s_1, end='')
         else:
-            print(' ', end='')
+            print(s_2, end='')
     print()
 else:
+    # Для того, чтоб высота фигуры была равна указаной ползователем, но в таком случаи, фигура не соответствует условию
+    if not old_h % 2:
+        print(s_2, end='')
+        for j in range((h * 2) - 1):
+            print(s_1, end='')
+        print()
+    #
     for i in range(2, h+1):
         for j in range(h * 2):
             if i == j or j == ((h * 2) - i):
-                print('*', end='')
+                print(s_1, end='')
             else:
-                print(' ', end='')
+                print(s_2, end='')
         print()
 
 print('\n')
@@ -56,15 +69,15 @@ print('\n')
 for i in range(h):
     for j in range((h * 2)):
         if h - i <= j <= h + i:
-            print('*', end='')
+            print(s_1, end='')
         else:
-            print(' ', end='')
+            print(s_2, end='')
     print()
 else:
     for i in range(2, h+1):
         for j in range(h * 2):
             if i == j or j == ((h * 2) - i) or j == h:
-                print('*', end='')
+                print(s_1, end='')
             else:
-                print(' ', end='')
+                print(s_2, end='')
         print()
