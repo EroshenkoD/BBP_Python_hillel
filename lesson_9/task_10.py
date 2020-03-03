@@ -15,10 +15,10 @@ def shift(numb, runk=1, der=False):
 
     if der:
         for _ in range(runk):
-            numb >>= 1
+            numb = int(str(numb)[-1] + str(numb)[:-1])
     else:
         for _ in range(runk):
-            numb <<= 1
+            numb = int(str(numb)[1:] + str(numb)[0])
     return numb
 
 
