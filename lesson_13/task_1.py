@@ -39,8 +39,6 @@ col_y = int(input('Введите кол-во колонок: '))
 
 matrix = list([list([random.randint(10, 51) for _ in range(col_y)]) for _ in range(col_x)])
 
-dop_per = 0
-
 for row in matrix:
     sum_numb = 0
     list_all_numb = []
