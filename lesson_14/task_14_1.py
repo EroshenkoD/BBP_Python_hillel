@@ -34,11 +34,15 @@ dict_class = {}
 
 with open('file.txt', 'r', encoding='UTF-8') as file:
     for line in file:
-        line.strip().replace('\n', '')
-        key = line.split(' ')[0] + ' ' + line.split(' ')[1]
+        lst_line = line.strip().replace('\n', '').split(' ')
+        key = ''
+        for i in lst_line:
+            if i.isalpha():
+                key += i + ' '
         dict_class[key] = []
-        for i in range(2, len(line.split(' '))):
-            dict_class[key].append(int(line.split(' ')[i]))
+        for i in lst_line:
+            if i.isdigit():
+                dict_class[key].append(int(i))
 
 mid_bal_in_class = 0
 print('Средний бал ниже 5 у следующих студентов:')
